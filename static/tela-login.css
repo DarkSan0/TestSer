@@ -19,9 +19,10 @@ body {
     color: black;
     font-size: 1.5rem;
 }
-
-
-
+.navbar-border {
+    border: 2px solid;
+    background-color: #D9D9D9;
+}
 .login-container {
     position: fixed;
     left: 24.5%;
@@ -29,11 +30,11 @@ body {
     transform: translate(-50%, -50%);
     height: 500px;
     width: 400px;
-
     background-color: #BDBDBD;
     border-radius: 10px;
     padding: 20px;
     border: 3px solid;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 .center-content {
@@ -44,21 +45,14 @@ body {
     height: 100%;
 }
 
-.logo-image {
-    max-width: 100%;
-    height: auto;
-    margin-top: 20px;
-}
-
 .overlay-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    position: relative;
+}
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
 }
