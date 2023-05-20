@@ -11,7 +11,7 @@ app = Flask(__name__)
 def principal():
   global status
   if status == DESLOGADO:
-    return render_template('loginSER.html')
+    return render_template('index.html')
   if status == LOGADO:
     return redirect(url_for('acessado'))
 
