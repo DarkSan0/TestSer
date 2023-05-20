@@ -1,4 +1,4 @@
-# Estagiários
+# SER
 
 
 
@@ -15,14 +15,14 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 
 ```
 cd existing_repo
-git remote add origin https://gitlab.com/estagiarios-sem-bolsa/estagiarios.git
+git remote add origin https://gitlab.com/ornitorrincos1/SER.git
 git branch -M main
 git push -uf origin main
 ```
 
 ## Integrate with your tools
 
-- [ ] [Set up project integrations](https://gitlab.com/estagiarios-sem-bolsa/estagiarios/-/settings/integrations)
+- [ ] [Set up project integrations](https://gitlab.com/ornitorrincos1/SER/-/settings/integrations)
 
 ## Collaborate with your team
 
