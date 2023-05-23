@@ -5,6 +5,7 @@
     src:url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTRa1RVmPjeKy21_GQJaLlJI.woff) format('woff');
  }
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 body {
     background: linear-gradient(
         to right,
@@ -28,7 +29,7 @@ body {
     left: 24.5%;
     top: 50%;
     transform: translate(-50%, -50%);
-    height: 500px;
+    height: 450px;
     width: 400px;
     background-color: #BDBDBD;
     border-radius: 10px;
@@ -48,6 +49,7 @@ body {
 .overlay-container {
     position: relative;
 }
+
 .overlay {
     position: absolute;
     top: 50%;
@@ -55,4 +57,19 @@ body {
     width: 50%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
+}
+
+.logo img {
+    position: fixed;
+    margin-left: 50%;
+    width: 870px;
+}
+
+.esqueceu-senha a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    padding: 10px;
+    color: #212121;
 }

@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.menu {
+    background: #d9d9d9;
+    width: 100vw;
+    height: 60px;
+    border: 2px solid;
+    display: flex;
+    align-items: center;
+}
+
+.menu .mobile-menu {
+    border: 1px solid #c2c2c2;
+    border-radius: 4px;
+    margin: 31px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-right: 9px;
+    padding-left: 9px;
+}
+
+.menu .mobile-menu div {
+    width: 24px;
+    height: 2px;
+    background: #6c6c6c;
+    margin: 6px;
+    transition: all ease .2s;
+    cursor: pointer;
+}
+
+.menu .menu-faketrigger {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    margin: 46px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.menu .menu-faketrigger:checked ~ ul {
+    position: absolute;
+    background-color: #c0c0c0;
+    width: 100vw;
+    border: 2px solid;
+    margin-left: -2px;
+    height: 40px;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 18px;
+    margin-bottom: -5%;
+}
+
+.menu-faketrigger:checked ~ .mobile-menu {
+    border: 2px solid black;
+    border-radius: 4px;
+}
+
+.menu ul li a {
+    color: black;
+}
+
+.menu ul li a:hover {
+    color: #474747;
+}
+
+.form-container {  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    max-width: 1280px;
+    height: 1000px;
+    margin: 0 auto;
+    margin-top: 5%;
+    padding: 0 4%;
+}
+
+form {
+    background-color: #d9d9d9;
+    max-width: 600px;
+    height: 650px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.5);
+    
+}
+
+form h1 {
+    text-align: center;
+    font-size: 40px;
+    padding-top: 10px;
+}
+
+form p {
+    text-align: center;
+    margin: 40px 0;
+    font-size: 20px;
+}
+
+.input-text {
+    position: relative;
+    margin: 60px 0;
+    background-color: none;
+    
+}
+
+.input-text label {
+    position: absolute;
+    left: 0;
+}
+
+.input {
+    width: 100%;
+    background: none;
+    border: 0;
+    border-bottom: 2px solid #474747;
+    padding: 5px;
+    font-size: 17px;
+    outline: none;
+    cursor: text;
+}
+
+#name-box {
+    padding-top: 30px;
+    user-select: none;
+}
+
+#matricula-box {
+    padding-top: 30px;
+    user-select: none;
+}
+
+form .input-text .input:focus ~ label {
+    font-display: none;
+}
+
+.botao {
+    width: 100%;
+    text-align: center;
+}
+
+form input[type=submit] {
+    padding: 10px 40px;
+    border: 1px solid #474747;
+    border-radius: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
