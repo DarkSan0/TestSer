@@ -1,0 +1,49 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+}
+
+input[type='file']{
+    display: none;
+}
+
+.max-width{
+    max-width: 120px;
+    width: auto;
+    
+}
+
+.form-group.inline .imagemContainer {
+    position: fixed;
+    top: 5%;
+    left: 3%;
+    transform: translateY(-50%,);
+    overflow: hidden;
+    width: 120px;
+    height: 120px;
+    display: inline-block;
+}
+
+.form-group.inline .imagemContainer img {
+    width: 20px;
+    height: 120px;
+    object-fit: contain;
+}
+
+
+#imgAvatar{
+    max-width: 120px;
+    height: 120px;
+    width: 100%;
+    padding: 2px;
+    background-color: #eee;
+    border: 1px solid #111;   
+    cursor: pointer;
+    transition: background .3;
+}
+
+#imgAvatar:hover{
+    background-color: #111;
+}

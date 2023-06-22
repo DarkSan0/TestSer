@@ -1,0 +1,200 @@
+@font-face {
+    font-family: 'Open Sans Light';
+    font-style: normal;
+    font-weight: 300;
+    src:url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTRa1RVmPjeKy21_GQJaLlJI.woff) format('woff');
+}
+
+body {
+    background: linear-gradient(
+        to right,
+        #3779AE 0%,
+        #3779AE 65%,
+        #8FC5C3 65%,
+        #8FC5C3 70%,
+        #eee 70%,
+        #eee 100%
+    );
+    padding: 50px;
+    color: black;
+    font-size: 1.25rem;
+}
+
+.fonte_do_input_lado {
+    font-family: "Open Sans Light";
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    transform: scale(0.7);
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+}
+
+.form-group {
+    margin-bottom: 2%;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    font-family: "Open Sans Light";
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 5px;
+}
+
+.form-group.inline {
+    display: inline-block;
+    width: 34%;
+}
+
+.nome_aluno {
+    width: 83.6%;
+    margin-left: 15%;
+}
+
+.cpf-1{
+    margin-left: 15%;
+    width: 35%;
+    display: inline-block;
+    margin-right: 5%;
+}
+
+.cep2{
+    width: 20%;
+}
+
+.numero-aluno-1 {
+    width: 44%;
+    display: inline-block;
+}
+
+.grande {
+    width: 73%;
+    display: inline-block;
+    margin-right: 5%;
+}
+
+.data-t{
+    width: 20%;
+    display: inline-block;
+}
+
+.cep-1 {
+    display: inline-block;
+    width: 30%;
+    margin-right: 5%;
+}
+
+.rua-1 {
+    display: inline-block;
+    width: 63%;
+}
+
+.bairro-cidade{
+    display: inline-block;
+    width: 31%;
+    margin-right: 5%;
+}
+
+.uf{
+    display: inline-block;
+    width: 10%;
+    margin-right: 5%;
+}
+
+.n-casa{
+    display: inline-block;
+    width: 10%;
+}
+
+
+
+/* segundo container*/
+.container-right {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.p {
+    background-color: #4e88b8;
+    justify-content: center;
+    width: 300px;
+    height: 90px;
+    border-radius: 40px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 10%;
+    left: 50%;
+    align-items: center;
+    display: flex;
+    font-weight: 420;
+    font-size: 24px;
+    
+}
+
+.botao_professor{
+   height: 55px;
+   width: 190px;
+}
+
+.box_professor{
+    top: 55%;
+    padding: 15px;
+    display: flex;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+}
+
+.botao_aluno{
+    height: 55px;
+    width: 190px;
+}
+
+.box_aluno{
+    top: 40%;
+    padding: 15px;
+    display: flex;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+}
+
+.botao {
+    color: white;
+    width: 230px;
+    font-weight: bold;
+    border-radius: 0%;
+    height: 50px; 
+}
+
+.box_button{
+    top: 90%;
+    padding: 15px;
+    display: flex;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+}

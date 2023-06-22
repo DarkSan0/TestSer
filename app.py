@@ -1,52 +1,75 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
+from database import *
+from flask_wtf import FlaskForm
+
 
 #status: deslogado, logado
-LOGADO = 1
-DESLOGADO = 0
-status = DESLOGADO
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'XUXA'
 
+"""class  LoginForm(FlaskForm):
+  login = StringField("Usuário", validators = [DatarRequired()])
+  senha = PasswordField("Senha", validators = [DatarRequired()])
+  Olha o código do professor
+  """
+  
+
+# Rotas Login
 @app.route('/')
-def principal():
-  global status
-  if status == DESLOGADO:
-    return render_template('loginSER.html')
-  if status == LOGADO:
-    return redirect(url_for('acessado'))
+def acessando():
+  status = session.get('usuario', None)
+  if not status:
+    return render_template('index.html')
+  else:
+    return redirect(url_for('menu'))
 
 
-@app.route('/login', methods = ['POST'])
-def recebendo_dados():
-  global status
+# Rotas User, 'Esq-senha, logar e Deslogar'
+@app.route('/user/login', methods = ['POST'])
+def login():
   login = request.form.get('matricula','')
   senha = request.form.get('senha','')
 
   if login == 'aluno' and senha == '1234':
-    status = LOGADO
-    return redirect(url_for("acessado"))
+
+    session['usuario'] = 'aluno'
+    return redirect(url_for("menu"))
   
-  return redirect(url_for('principal'))
+  return redirect(url_for('acessando'))
+
+
+@app.route ("/user/deslogar")
+def deslogar ():
+  del session["usuario"]
+  return redirect(url_for("acessando"))
+
+
+@app.route("/user/esqueceu-senha") 
+def reset_senha ():
+  return render_template("esqueceu-senha.html")
 
 
 
-@app.route("/principal")
-def acessado ():
-  global status
-  if status == DESLOGADO:
-    return redirect(url_for('principal'))
-  return render_template('principal.html')
-
-@app.route("/sair")
-def desacessar():
-  global status
-  status = DESLOGADO
-  return redirect(url_for('principal'))
+# Rotas Menu
+@app.route("/menu")
+def menu ():
+  status = session.get('usuario', None)
+  if status:
+    return render_template ("principal.html")
+  return redirect(url_for("acessando"))
 
 
 
+@app.route("/menu/adm/cadastrar/aluno")
+def cadastrar_alu():
+  return render_template("tela_de_cadastro-a.html")
 
-  
+
+@app.route("/menu/adm/cadastrar/professor")
+def cadastrar_prof():
+  return render_template("tela_de_cadastro-p.html")
+
 
 if __name__ == '__main__':
-  app.run()
+  app.run(debug= True)
