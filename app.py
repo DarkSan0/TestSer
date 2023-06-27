@@ -1,6 +1,6 @@
-from flask import Flask, render_template, request, redirect, url_for, session
-from database import *
-from flask_wtf import FlaskForm
+from flask import Flask, render_template, request, redirect, url_for, session, flash
+#from flask_wtf import FlaskForm
+from routes import *
 
 
 #status: deslogado, logado
@@ -30,12 +30,13 @@ def acessando():
 def login():
   login = request.form.get('matricula','')
   senha = request.form.get('senha','')
-
+  
   if login == 'aluno' and senha == '1234':
 
     session['usuario'] = 'aluno'
     return redirect(url_for("menu"))
   
+  flash("Matricula ou senha incorreta")
   return redirect(url_for('acessando'))
 
 
@@ -70,6 +71,15 @@ def cadastrar_alu():
 def cadastrar_prof():
   return render_template("tela_de_cadastro-p.html")
 
+
+
+"""
+@app.route("/")
+def redirecionador ():
+  return redirect(url_for("login"))
+
+app.add_url_rule("/login", "login", login)
+"""
 
 if __name__ == '__main__':
   app.run(debug= True)

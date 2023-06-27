@@ -11,3 +11,9 @@ function checkInputs() {
         submitButton.setAttribute('disabled', 'disabled'); // Define o atributo 'disabled' no botão de envio
     }
 }
+
+// Adicionar ouvintes de evento aos campos de entrada
+const usernameInput = document.getElementById('username');
+const passwordInput = document.getElementById('password');
+usernameInput.addEventListener('input', checkInputs);
+passwordInput.addEventListener('input', checkInputs);

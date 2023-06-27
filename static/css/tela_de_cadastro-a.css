@@ -59,44 +59,46 @@ body {
 
 .form-group.inline {
     display: inline-block;
-    width: 34%;
 }
 
 .nome_aluno {
-    width: 83.7%;
-    margin-left: 15%;
+    width: 98.6%;
+    margin-left: 0%;
 }
 
 .cpf-1{
-    margin-left: 15%;
-    width: 35%;
-    display: inline-block;
+    margin-left: 0%;
+    width: 34%;
     margin-right: 5%;
 }
 
-.cep2{
-    width: 20%;
-}
-
 .numero-aluno-1 {
-    width: 44%;
+    width: 34%;
     display: inline-block;
-}
-
-.grande {
-    width: 98.7%;
-    margin-right: 1.3%;
-}
-
-.n-responsavel2 {
-    margin-left: 5%;
-    width: 35%;
     margin-right: 5%;
 }
 
 .data-t{
     width: 19.6%;
     display: inline-block;
+}
+
+.cor-d{
+    color: #6e6e6e;
+}
+
+.grande {
+    width: 98.6%;
+    margin-left: 0%;
+}
+
+.n-responsavel2 {
+    width: 46.5%;
+}
+
+.n-responsavel1 {
+    width: 46.5%;
+    margin-right: 5%;
 }
 
 .cep-1 {

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="icon" href="/static/imagens/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/static/css/tela-login.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="overlay-container">
+    <div class="row justify-content-center">
+      <div class="col-6 col-md-4 login-container custom-container">
+        <div class="center-content">
+          <h4 class="text-center mb-4">Login</h4>
+          <form action="/user/login" method="post" id="loginForm">
+            <div class="form-group">
+              <label class="fonte_do_input_encima" for="matricula">Matricula:</label>
+              <input type="text" class="form-control custom-input custom-bg-input" id="username" placeholder="Digite sua matricula" name="matricula">
+            </div>
+            <div class="form-group">
+              <label class="fonte_do_input_encima" for="senha">Senha:</label>
+              <input type="password" class="form-control custom-input custom-bg-input" id="password" placeholder="Digite sua senha" name="senha">
+            </div>
+            <div>
+              <label class="lembrar">
+                <input id="lembrar" type="checkbox" value="remember-me">
+                Lembre de mim
+              </label>
+            </div>
+            <button type="submit" class="btn btn-success" onclick="salvarCredenciais()" disabled>Entrar</button>
+            <div class="esqueceu-senha">
+              <a href="/user/esqueceu-senha"> Esqueceu sua senha? </a> <!-- Parte onde o usuário poderá trocar de senha caso tenha esquecido -->
+            </div>
+          </form>
+          <div id="errorMessage" class="error-message"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="logo">
+    <img src="/static/imagens/logo-removebg-preview.png" alt="logo"> <!-- Parte onde se encontra a logo principal -->
+  </div>
+  <!--<div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-dark p-4">
+      <h5 class="text-white h4">No momento esta vazio</h5>
+      <span class="text-body-secondary">Volte depois</span>
+    </div>
+  </div>-->
+  <nav class="navbar navbar-light fixed-top navbar-border">
+    <div class="container-fluid w-100">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav> 
+  <!--
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-dark p-4">
+      <h5 class="text-white h4">...</h5>
+      <span class="text-body-secondary">...</span>
+    </div>
+  </div> -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+  <!-- js -->
+  <script src="/static/js/salvar-credenciais.js"></script>
+  <script src="/static/js/botao-login.js"></script>
+  <script src="/static/js/matricula_senha-incorretas.js"></script>
+  <!--{% with massages = get %} Dar uma olhada no codigo do professor -->
+  <!-- js -->
+</body>
+</html>

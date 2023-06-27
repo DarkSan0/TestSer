@@ -30,13 +30,13 @@ body {
 
 
 .dist-b{
-    margin-top: 100px;;
+    margin-top: 15%;;
 
 
 
 }
 .dist-a {
-    margin-top: 100px;
+    margin-top: 15%;
 
 
 }
@@ -58,10 +58,10 @@ body {
 
 
     position: absolute;
-    left: 30%;
-    top: 5%;
-    width: 20%;
-    height: 95%;
+    left: 32%;
+    top: 10%;
+    width: 30%;
+    height: 80%;
     max-width: 100%;
     
 }
@@ -74,31 +74,50 @@ body {
 .button1{
     
     display: flex;
-    border-radius: 0px;
-    box-shadow: 10px 10px 20px rgba(7, 1, 1, 0.518);
+    border-radius: 0%;
+    box-shadow: 10px 30px 20px rgba(7, 1, 1, 0.518);
     color: black;
-    font-weight: 500;
-    justify-content: center;
-    align-items: start;
+    font-weight: 500;  
+    position: relative;
     
 
 
 }
 
 .b-grande {
-    width: 100%;
+    width: 60%;
     height: 175px;
 
 
 
 }
 
+
+.button-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+}
+
+.centro {
+    position: absolute;
+    transform: translateY(-50%);
+    top: 10%;
+    left: 0;
+    right: 0;
+
+}
+
+
 .button2 {
     display: block; /* Espaço dos botões e distância entre elas   */
-    margin-bottom: 25px;
+    margin-bottom: 5%;
     margin-left: 15%;
-    width:200px;
-    border-radius: 0px;
+    width: 35%;
+    border-radius: 2px;
 
 }
 
@@ -107,3 +126,13 @@ body {
     z-index: 9999;
 
 }
+
+img {
+    width: 70%;
+}
+
+
+
+
+
+
