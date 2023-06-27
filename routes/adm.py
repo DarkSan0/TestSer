@@ -7,21 +7,6 @@ def home_adm():
 
 def cadastro_aluno ():
     if request.method == "POST":
-        pass
-    
-    
-    return  Restrigir_Permissao(ADM, "Cadastro-Aluno.html", "home")
-
-def cadastro_professor ():
-    
-    if request.method == "POST":
-        pass
-    
-    
-    return  Restrigir_Permissao(ADM, "Cadastro-Professor.html", "home")
-
-def cadastro_adm ():
-    if request.method == "POST":
         fImage = request.form.get("fImage")
         nome_aluno = request.form.get("nome-aluno")
         cpf = request.form.get("cpf")
@@ -39,6 +24,20 @@ def cadastro_adm ():
         cidade = request.form.get("cidade")
         estado = request.form.get("uf")
         numero = request.form.get("numero")
+    
+    
+    return  Restrigir_Permissao(ADM, "Cadastro-Aluno.html", "home")
+
+def cadastro_professor ():
+    
+    if request.method == "POST":
+    
+    
+    return  Restrigir_Permissao(ADM, "Cadastro-Professor.html", "home")
+
+def cadastro_adm ():
+    if request.method == "POST":
+        pass
         
         
     return  Restrigir_Permissao(ADM, "Cadastro-Administrador", "home")

@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 #from flask_wtf import FlaskForm
-from routes import *
 
 
 #status: deslogado, logado
@@ -20,7 +19,7 @@ app.config['SECRET_KEY'] = 'XUXA'
 def acessando():
   status = session.get('usuario', None)
   if not status:
-    return render_template('index.html')
+    return render_template('Login.html')
   else:
     return redirect(url_for('menu'))
 
@@ -48,7 +47,7 @@ def deslogar ():
 
 @app.route("/user/esqueceu-senha") 
 def reset_senha ():
-  return render_template("esqueceu-senha.html")
+  return render_template("Esqueceu-Senha.html")
 
 
 
@@ -57,7 +56,7 @@ def reset_senha ():
 def menu ():
   status = session.get('usuario', None)
   if status:
-    return render_template ("principal.html")
+    return render_template ("Menu.html")
   return redirect(url_for("acessando"))
 
 
@@ -69,7 +68,7 @@ def cadastrar_alu():
 
 @app.route("/menu/adm/cadastrar/professor")
 def cadastrar_prof():
-  return render_template("tela_de_cadastro-p.html")
+  return render_template("Cadastro-Professor")
 
 
 
