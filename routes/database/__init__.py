@@ -31,7 +31,7 @@ def criar_professor( nome, idade, sexo, email, cpf, numero_telefone, cep, rua, b
         "dados": professor,
         "senha": senha
     }
-    return
+    return dados
 
 
 def criar_administrador (nome,idade,sexo,senha):
@@ -61,7 +61,7 @@ def Verificador_Usuario (senha, *usr):
     
     global dados
     
-    if get_user(usr):
+    if get_user(usr[0], usr[1]):
         tipo, matricula = usr
         if senha == ((dados[tipo])[matricula])["senha"]:
             return usr

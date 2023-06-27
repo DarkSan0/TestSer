@@ -10,7 +10,7 @@ def cadastro_aluno ():
         pass
     
     
-    return  Restrigir_Permissao(ADM, "Cadastro-Aluno.html", "home")
+    return Restrigir_Permissao(ADM, "Cadastro-Aluno.html", "home")
 
 def cadastro_professor ():
     
