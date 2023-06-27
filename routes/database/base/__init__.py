@@ -10,6 +10,10 @@ dados = {
     
     PROF: {
         
+        ">": {
+            "dados": [uhdewhuihfiuh],
+            "senha": []
+        }
         
     },
     

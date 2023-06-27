@@ -26,11 +26,19 @@ def criar_professor( nome, idade, sexo, email, cpf, numero_telefone, cep, rua, b
     professor = Professor( nome, idade, sexo, email, cpf, numero_telefone, cep, rua, bairro, cidade, numero_casa)
     
     
-    (dados[PROF])[professor.matricula] = {
+    dados[PROF] = {f'{professor.matricula}'}
+    dados[PROF][f'{professor.matricula}'] = {
         
         "dados": professor,
         "senha": senha
-    }
+        }
+    
+    
+    """{
+        
+        "dados": professor,
+        "senha": senha
+    }"""
     return
 
 

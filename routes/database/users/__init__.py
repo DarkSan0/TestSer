@@ -1,4 +1,5 @@
 from abc import abstractmethod, ABC
+from ..func import *
 from ..func import gerador_matricula as gm
 from ..constant import *
 
@@ -8,7 +9,7 @@ class Usuario (ABC):
     
     def __init__ (self,  nome, idade, sexo):
         
-        self.__matricula = self.matricula_usr
+        self.__matricula = self.matricula_usr ()
         self.__nome = nome
         self.__idade = idade
         self.__sexo = sexo
@@ -30,6 +31,7 @@ class Administrador (Usuario):
     def matricula_usr(self):
         return gm(ADM)
 
+    
 
 
 class Professor (Usuario):

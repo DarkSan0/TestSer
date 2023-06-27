@@ -23,7 +23,8 @@ def cadastro_aluno ():
         bairro = request.form.get("bairro")
         cidade = request.form.get("cidade")
         estado = request.form.get("uf")
-        numero = request.form.get("numero")
+        numero_casa = request.form.get("numero")
+        criar_aluno(nome_aluno, data_nascimento, "", email, "1234", nome_responsavel,numero_responsavel1, numero_responsavel2, cep, rua, bairro, cidade, numero_casa, cpf)
     
     
     return  Restrigir_Permissao(ADM, "Cadastro-Aluno.html", "home")
@@ -31,7 +32,7 @@ def cadastro_aluno ():
 def cadastro_professor ():
     
     if request.method == "POST":
-    
+        pass
     
     return  Restrigir_Permissao(ADM, "Cadastro-Professor.html", "home")
 
