@@ -7,7 +7,7 @@
   <title>Login</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="icon" href="/static/imagens/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="/static/css/tela-login.css">
+  <link rel="stylesheet" href="/static/css/Login.css">
 </head>
 <body>
   <div class="overlay-container">
@@ -17,7 +17,7 @@
           <h4 class="text-center mb-4">Login</h4>
 
 
-          <form action="/user/login" method="post" id="loginForm">
+          <form action="{{url_for('login')}}" method="post" id="loginForm">
             <div class="form-group">
               <label class="fonte_do_input_encima" for="matricula">Matricula:</label>
               <input type="text" class="form-control custom-input custom-bg-input" id="username" placeholder="Digite sua matricula" name="matricula">
@@ -34,7 +34,7 @@
             </div>
             <button type="submit" class="btn btn-success" onclick="salvarCredenciais()" disabled>Entrar</button>
             <div class="esqueceu-senha">
-              <a href="/user/esqueceu-senha"> Esqueceu sua senha? </a> <!-- Parte onde o usuário poderá trocar de senha caso tenha esquecido -->
+              <a href="{{url_for('reset_senha')}}"> Esqueceu sua senha? </a> <!-- Parte onde o usuário poderá trocar de senha caso tenha esquecido -->
             </div>
           </form>
 

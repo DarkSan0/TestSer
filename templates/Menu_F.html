@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>Usuario Logado <br><br></p>
+
+    {% if tipo_usuario and dados_usuario %}
+
+        {% if tipo_usuario == 7 %}
+
+            <p>Bem vindo Aluno</p>
+
+        {% endif %}
+
+        {% if tipo_usuario == 6 %}
+
+            <p>Bem vindo Professor</p>
+
+        {% endif %}
+
+        {% if tipo_usuario == 5 %}
+
+            <p>Bem vindo Administrador</p>
+
+        {% endif %}
+
+        <p><br><br><br>
+
+        {{dados_usuario}}
+
+        </p>
+        
+
+    {% endif %}
+
+    <form action="{{url_for('deslogar')}}">
+        <button type="submit">sair</button>
+    </form>
+</body>
+</html>

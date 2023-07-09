@@ -1,3 +1,0 @@
-ADM = 5
-PROF = 6
-ALU = 7

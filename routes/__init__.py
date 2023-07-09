@@ -9,6 +9,23 @@ from .aluno import *
 
 from routes import *
 
+def redirecionador_home():
+    
+    status_usr = session.get("usuario")
+    if status_usr:
+        
+        if len(status_usr) == ADM:
+            return redirect(url_for('home_administrador'))
+        
+        if len(status_usr) == PROF:
+            return redirect(url_for('home_professor'))
+        
+        if len(status_usr) == ALU:
+            return redirect(url_for('home_aluno'))
+    
+    return redirect(url_for('login'))
+    
+
 
 def login ():
     if request.method == "POST":
@@ -16,22 +33,30 @@ def login ():
         senha = request.form.get("senha", None)
         tamnho_mat = len(matricula)
         
-        usr = Verificador_Usuario(senha, len(matricula),matricula)
-        if usr:
-            session.get["usuario"] = usr
-            
-            if tamnho_mat == ALU:
-                return (redirect(url_for("home_alu")))
-            
-            if tamnho_mat == PROF:
-                return (redirect(url_for("home_prof"))) 
-            
-            if tamnho_mat == ADM:
-                return (redirect(url_for("home_admin"))) 
-            
+        sucesso = Verificar_Tentativa_Log(dados, senha, matricula)
+        if sucesso:
+            session['usuario'] = sucesso
+        if session.get('usuario'):
+        
+            return redirect(url_for('redirecionador_home'))
         flash("Matricula ou senha invalidas")
         return redirect(url_for("login"))
     
     
     if request.method == "GET":
-        return render_template("index.html")
+        return render_template("Login.html")
+    
+
+    
+def reset_senha ():
+  return render_template("Esqueceu-Senha.html")
+
+
+
+def visualizar ():
+    return f"{dados}"
+
+
+def deslogar ():
+    del session['usuario']
+    return redirect(url_for('redirecionador_home'))

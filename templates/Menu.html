@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
+    <title>navbar</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/css/principal.css">
+    <link rel="stylesheet" href="/static/css/Menu.css">
     <link rel="icon" href="/static/imagens/favicon.ico" type="image/x-icon">
 
-   
-     
 </head>
 <body>
     <div>
@@ -20,7 +18,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <form action="/user/deslogar"><button type="submit" class="button logout-button">Sair</button></form>
+                <form action="{{url_for('deslogar')}}"><button type="submit" class="button logout-button">Sair</button></form>
             </div>
         </nav>
         <!--
@@ -39,8 +37,8 @@
 
     <div class="container">
         <div class="dist-b">
-            <form action="/menu/adm/cadastrar/professor"><button type="submit" class="btn btn-danger button2">Cadastro de Professores</button></form>
-            <form action="/menu/adm/cadastrar/aluno"><button type="submit" class="btn btn-danger button2">Cadastro de Alunos</button></form>
+            <form action="{{url_for('cadastro_professor')}}"><button type="submit" class="btn btn-danger button2">Cadastro de Professores</button></form>
+            <form action="{{url_for('cadastro_aluno')}}"><button type="submit" class="btn btn-danger button2">Cadastro de Alunos</button></form>
             <form action="#"><button type="button" class="btn btn-danger button2">Cadastro de Disciplinas</button></form>
             <form action="#"><button type="button" class="btn btn-danger button2">Cadastro de Turmas</button></form>
             <form action="#"><button type="button" class="btn btn-danger button2">Coordenadores</button></form>
@@ -53,7 +51,7 @@
         <div class="dist-a">
             <button class="btn btn-danger button1 b-grande dist-daNav">
                 <p class="centro">Atribuir Disciplinas</p>
-                <img src="/static/imagens/carinhalivro-removebg-preview.png" alt="Imagem" class="button-image">
+                <img src="/static/imagens/dever-de-casa.png" alt="Imagem" class="button-image">
             </button>
             <button class="btn btn-danger button1 b-grande dist-daNav">
                 <p class="centro">Atribuir turmas</p>

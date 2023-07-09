@@ -1,84 +1,61 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
-#from flask_wtf import FlaskForm
+from routes import *
 
+aluno0 = Aluno("Ronaldo", "1234")
+professor0 = Professor("Vagner", "1234")
+administrador0 = Administrador("Mario", "1234")
 
-#status: deslogado, logado
+dados[ALU][aluno0.get_matricula()]= aluno0
+dados[PROF][professor0.get_matricula()]= professor0
+dados[ADM][administrador0.get_matricula()]= administrador0
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'XUXA'
-
-"""class  LoginForm(FlaskForm):
-  login = StringField("Usuário", validators = [DatarRequired()])
-  senha = PasswordField("Senha", validators = [DatarRequired()])
-  Olha o código do professor
-  """
-  
-
-# Rotas Login
-@app.route('/')
-def acessando():
-  status = session.get('usuario', None)
-  if not status:
-    return render_template('Login.html')
-  else:
-    return redirect(url_for('menu'))
+app.secret_key = "XUXA"
 
 
-# Rotas User, 'Esq-senha, logar e Deslogar'
-@app.route('/user/login', methods = ['POST'])
-def login():
-  login = request.form.get('matricula','')
-  senha = request.form.get('senha','')
-  
-  if login == 'aluno' and senha == '1234':
+# inicio
+app.add_url_rule("/", "redirecionador_home", redirecionador_home)
+app.add_url_rule("/login", "login", login, methods = ["GET", "POST"])
+app.add_url_rule("/esqueceu-senha", "reset_senha", reset_senha)
 
-    session['usuario'] = 'aluno'
-    return redirect(url_for("menu"))
-  
-  flash("Matricula ou senha incorreta")
-  return redirect(url_for('acessando'))
+app.add_url_rule("/logout", "deslogar", deslogar)
 
-
-@app.route ("/user/deslogar")
-def deslogar ():
-  del session["usuario"]
-  return redirect(url_for("acessando"))
-
-
-@app.route("/user/esqueceu-senha") 
-def reset_senha ():
-  return render_template("Esqueceu-Senha.html")
+app.add_url_rule("/v", "visualizar", visualizar)
 
 
 
-# Rotas Menu
-@app.route("/menu")
-def menu ():
-  status = session.get('usuario', None)
-  if status:
-    return render_template ("Menu.html")
-  return redirect(url_for("acessando"))
+
+
+# administar
+app.add_url_rule("/menu/adm", "home_administrador",home_administrador)
+app.add_url_rule("/menu/adm/cadastrar/adm", "cadastro_administrador",
+                cadastro_administrador, methods = ["GET", "POST"])
+app.add_url_rule("/menu/adm/cadastrar/p", "cadastro_professor",
+                cadastro_professor, methods = ["GET", "POST"])
+app.add_url_rule("/menu/adm/cadastrar/a", "cadastro_aluno",
+                cadastro_aluno, methods = ["GET", "POST"])
 
 
 
-@app.route("/menu/adm/cadastrar/aluno")
-def cadastrar_alu():
-  return render_template("tela_de_cadastro-a.html")
-
-
-@app.route("/menu/adm/cadastrar/professor")
-def cadastrar_prof():
-  return render_template("Cadastro-Professor")
 
 
 
-"""
-@app.route("/")
-def redirecionador ():
-  return redirect(url_for("login"))
 
-app.add_url_rule("/login", "login", login)
-"""
+# professor
+app.add_url_rule("/menu/p", "home_professor",home_professor)
 
-if __name__ == '__main__':
-  app.run(debug= True)
+
+
+
+
+
+
+# aluno
+app.add_url_rule("/menu/a", "home_aluno", home_aluno)
+
+
+
+
+if __name__ == "__main__":
+    
+    app.run(debug=True)

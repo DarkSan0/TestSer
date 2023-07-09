@@ -1,77 +1,170 @@
-from .base import *
-from .users import *
-from .constant import *
+import datetime
+
+ADM = 5
+PROF = 6
+ALU = 7
 
 
-
-
-def criar_aluno(nome, idade, sexo, email, senha,nome_responsavel,numero_responsavel1, numero_responsavel2, cep, rua, bairro, cidade, numero_casa, cpf="000.000.000-00"):
-    
-    global  dados
-    aluno = Aluno(nome,idade,sexo,email,nome_responsavel,numero_responsavel1,numero_responsavel2,cep,rua,bairro,cidade,numero_casa,cpf)
-    
-    
-    (dados[ALU])[aluno.matricula] = {
-        
-        "dados": aluno,
-        "senha": senha
+dados = {
+    ADM: {},
+    PROF: {},
+    ALU: {}
     }
-    return
 
+ano_set = "2023"
+num_alu_ano = 0
+num_prof_ano = 0
+num_adm_ano = 0
 
-def criar_professor( nome, idade, sexo, email, cpf, numero_telefone, cep, rua, bairro, cidade, numero_casa,senha):
+def _gerador_matricula(tipo):
+    global ano_set, num_alu_ano, num_prof_ano, num_adm_ano
     
+    ano = datetime.datetime.now().date().strftime("%Y")
+    if ano != ano_set:
+        ano_set = ano
+        num_alu_ano = 0
+        num_prof_ano = 0
+        num_adm_ano = 0
     
-    global  dados
-    professor = Professor( nome, idade, sexo, email, cpf, numero_telefone, cep, rua, bairro, cidade, numero_casa)
+    if tipo == ALU:
+        if num_alu_ano < 1000:
+            string_alu = f"{num_alu_ano}"
+            
+            if num_alu_ano < 10:
+                string_alu = f"00{num_alu_ano}"
+            if num_alu_ano < 100 and num_alu_ano >= 10:
+                string_alu = f"0{num_alu_ano}"
+
+                
+            num_alu_ano += 1
+            return f"{ano_set}" + string_alu
     
-    
-    dados[PROF] = {f'{professor.matricula}'}
-    dados[PROF][f'{professor.matricula}'] = {
+    if tipo == PROF:
+        if num_prof_ano < 100:
+            string_alu = f"{num_prof_ano}"
+            
+            if num_prof_ano < 10:
+                string_alu = f"0{num_prof_ano}"
+                
+            num_prof_ano += 1
+            return f"{ano_set}" + string_alu
         
-        "dados": professor,
-        "senha": senha
-        }
+    if tipo == ADM:
+        if num_adm_ano < 10:
+            string_alu = f"{num_adm_ano}"    
+            num_adm_ano += 1
+            return f"{ano_set}" + string_alu
+
+
+
+
+from abc import ABC, abstractmethod
+
+class Usuario (ABC):
     
-    
-    """{
+    def __init__ (self, nome, senha):
         
-        "dados": professor,
-        "senha": senha
-    }"""
-    return
+        self.__matricula = self.set_matricula()
+        self.__nome = nome
+        self.__senha = senha
+    
+    @abstractmethod
+    def set_matricula (self):
+        pass
+
+    def get_senha (self):
+        return self.__senha
+    
+    def get_matricula (self):
+        return self.__matricula
+    
+    def get_dados_log (self):
+        return self.__matricula, self.__senha
+    
+    def dados_pessoais (self, email, telefone_pessoal):
+        self.email = email
+        self.telefone_pessoal = telefone_pessoal
+    
+    
 
 
-def criar_administrador (nome,idade,sexo,senha):
-    
-    global dados
-    
-    adm = Administrador(nome,idade,sexo)
-    (dados[ADM])[adm.matricula] = {
-        "dados":adm,
-        "senha":senha
-    }
-    
-    return
 
 
-def get_user (tipo, matricula):
+
+
+class Administrador (Usuario):
+
+    def __init__(self, nome, senha):
+        super().__init__(nome, senha)
     
-    global dados
+    def set_matricula(self):
+        return _gerador_matricula(ADM)
     
-    if tipo in dados:
-        if matricula in dados[tipo]:
-            return tipo, matricula
+    def dados_pessoais(self, email, telefone_pessoal, cpf):
+        super().dados_pessoais(email, telefone_pessoal)
+
+
+
+
+class Professor (Usuario):
+
+    def __init__(self, nome, senha):
+        super().__init__(nome, senha)
+    
+
+    def set_matricula(self):
+        return _gerador_matricula(PROF)
+    
+    def dados_pessoais(self, email, telefone_pessoal, cpf,
+                        cep, rua, bairro, cidade, numero_casa):
         
-    return False
-
-def Verificador_Usuario (senha, *usr):
-    
-    global dados
-    
-    if get_user(usr):
-        tipo, matricula = usr
-        if senha == ((dados[tipo])[matricula])["senha"]:
-            return usr
+        super().dados_pessoais(email, telefone_pessoal, cpf)
         
-    return False
+        
+
+        self.cep = cep
+        self.rua = rua
+        self.bairro = bairro
+        self.cidade = cidade
+        self.numero_casa = numero_casa
+    
+
+
+class Aluno (Usuario):
+
+    def __init__(self, nome, senha):
+        super().__init__(nome, senha)
+    
+
+    def set_matricula(self):
+        return _gerador_matricula(ALU)
+    
+    def dados_pessoais(self, email, telefone_pessoal, cpf,
+                       nome_responsavel,numero_responsavel1, numero_responsavel2,
+                        cep, rua, bairro, cidade, numero_casa):
+        
+        super().dados_pessoais(email, telefone_pessoal, cpf)
+        
+        self.nome_responsavel = nome_responsavel
+        self.numero_responsavel2 = numero_responsavel1
+        self.numero_responsavel1 = numero_responsavel2
+
+        self.cep = cep
+        self.rua = rua
+        self.bairro = bairro
+        self.cidade = cidade
+        self.numero_casa = numero_casa
+
+    
+
+
+if __name__ == "__main__":
+
+    pr = Professor ("Jubileu", "12y7864")
+    print (pr.get_matricula())
+    dados[PROF] = {pr.get_matricula(): pr}
+    
+    print ((dados[PROF][pr.get_matricula()]).get_senha())
+    
+    #dados[PROF][pr.get_matricula] = pr
+    print (dados)

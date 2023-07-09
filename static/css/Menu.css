@@ -59,8 +59,8 @@ body {
 
     position: absolute;
     left: 32%;
-    top: 10%;
-    width: 30%;
+    top: 13%;
+    width: 25%;
     height: 80%;
     max-width: 100%;
     
@@ -75,10 +75,11 @@ body {
     
     display: flex;
     border-radius: 0%;
-    box-shadow: 10px 30px 20px rgba(7, 1, 1, 0.518);
+    box-shadow: 10px 10px 20px rgba(7, 1, 1, 0.518);
     color: black;
-    font-weight: 500;  
+    font-weight: 550;  
     position: relative;
+    border-color: #545454;
     
 
 
@@ -86,7 +87,7 @@ body {
 
 .b-grande {
     width: 60%;
-    height: 175px;
+    height: 200px;
 
 
 
@@ -98,8 +99,8 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50%;
-    height: 50%;
+    width: 45%;
+    height: 60%;
 }
 
 .centro {
@@ -112,12 +113,16 @@ body {
 }
 
 
+
 .button2 {
     display: block; /* Espaço dos botões e distância entre elas   */
     margin-bottom: 5%;
     margin-left: 15%;
     width: 35%;
-    border-radius: 2px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 20px rgba(7, 1, 1, 0.518);
+    border-color: #545454;
+
 
 }
 
@@ -127,9 +132,26 @@ body {
 
 }
 
-img {
-    width: 70%;
+.dist-b > label {
+    margin-left: 15%;
+    position: absolute;
+    left:1%;
+    top: 8%;
+    width: 34%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(222, 136, 30, 0.097);
+    font-size: 20px;
+
+
+
+
 }
+
+
+
+
 
 
 

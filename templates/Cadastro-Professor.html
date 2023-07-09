@@ -8,12 +8,12 @@
     <link rel="icon" href="/static/imagens/favicon.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/css/foto-preview.css">
-    <link rel="stylesheet" href="/static/css/tela_de_cadastro-p.css">
+    <link rel="stylesheet" href="/static/css/Cadastro-Professor.css">
 </head>
 <body>
-    <div class="container">
-        <div class="content">
-            <form method="get" action=".">
+    <form method="post" action="{{url_for('cadastro_professor')}}">
+        <div class="container">
+            <div class="content">
                 <!--Pré-visualizar a imagem-->
                 <div class="max-width">
                     <div class="imagemContainer">
@@ -81,28 +81,26 @@
                         <label class="fonte_do_input_lado" for="numero">NÚMERO:</label>
                         <input class="custom-input numero_casa" id="numero" type="text" name="numero" placeholder="Casa" required>
                     </div>
+                    <div class="box_button">
+                        <div class="continue-button cont-botao ">
+                            <button type="submit" class="btn btn-warning botao">Cadastrar</button> <!-- BOTÃO PARA CONFIRMAR O CADASTRO -->
+                        </div>
+                    </div>
                 </div>
-
-            </form>
+            </div>
         </div>
-    </div>
+    </form>
     <div class="container-right">
         <p class="p">Cadastro de Professores</p>
 
-        <form action="/menu/adm/cadastrar/aluno" class="box_aluno">
+        <form action="{{url_for('cadastro_aluno')}}" class="box_aluno">
             <button type="submit" class="btn btn-danger botao_aluno">Cadastro de Alunos</button>
         </form>
-      
         <form action="" class="box_professor">
-          <button type="submit" class="btn btn-primary botao_professor" disabled>Cadastro do Professor</button>
+            <button type="submit" class="btn btn-primary botao_professor" disabled>Cadastro do Professor</button>
         </form>
-        <div class="box_button">
-            <div class="continue-button cont-botao">
-                <button type="button" class="btn btn-warning botao">Cadastrar</button> <!-- BOTÃO PARA CONFIRMAR O CADASTRO -->
-            </div>
-        </div>
     </div>
-      
+
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
