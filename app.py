@@ -1,4 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
+from flask_sqlalchemy import SQLAlchemy
+from flask_login import LoginManager
 from routes import *
 
 aluno0 = Aluno("Ronaldo", "1234")
@@ -11,7 +13,11 @@ dados[ADM][administrador0.get_matricula()]= administrador0
 
 app = Flask(__name__)
 app.secret_key = "XUXA"
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///bancodados.db'
 
+# criação do banco de dados
+
+database = SQLAlchemy(app)
 
 # inicio
 app.add_url_rule("/", "redirecionador_home", redirecionador_home)
