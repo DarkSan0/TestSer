@@ -6,45 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alterar Senha</title>
-    <link rel="shortcut icon" href="/static/imagens/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/static/css/Esqueceu-Senha.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="shortcut icon" href="/imagens/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/tela-esqueceu-senha.css">
 </head>
 
 <body>
-    <nav class="menu">
-        <input type="checkbox" class="menu-faketrigger">
-        <div class="mobile-menu">
-            <div class="linha1"></div>
-            <div class="linha2"></div>
-            <div class="linha3"></div>
-        </div>
-
-        <ul>
-            <li><a target="_blank"  href="https://www.instagram.com/ecitecnews/">Instagram</a></li>
-            <li><a href="/">Sair</a></li>
-        </ul>
-    </nav>
-
+    <a href="/templates/index.html"><button type="button" class="btn-close" aria-label="Close"></button></a>
     <section class="form-container">
         <div class="container">
-            <form action="">
+            <form id="formulario">
                 <h1>Siga as Instruções!</h1>
                 <p>Preencha o formulário com seu Nome e sua Matrícula e entraremos em contato pelo e-mail cadastrado</p>
 
                 <div class="input-text">
-                    <input type="text" name="" id="name-box" class="input" autocomplete="off">
+                    <input type="text" name="nome" id="nome" class="input" autocomplete="off" required>
                     <label>Seu nome completo:</label>
                 </div>
 
                 <div class="input-text">
-                    <input type="text" name="" id="matricula-box" class="input" autocomplete="off">
+                    <input type="text" name="matricula" id="matricula" class="input" autocomplete="off" required>
                     <label>Sua matrícula:</label>
                 </div>
 
-                <div class="botao"><input type="submit" value="Confirmar"></div>
+                <div><button class="botao" type="submit">Enviar</button></div>
             </form>
         </div>
     </section>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/sistema-esqueceu-senha.js"></script>
 </body>
 </html>

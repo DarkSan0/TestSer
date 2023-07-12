@@ -184,3 +184,8 @@ nav #logo {
     padding-right: 30px;
     width: 100%;
 }
+
+.boletim {
+    display: none;
+    justify-content: space-evenly;
+}
