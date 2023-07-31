@@ -104,6 +104,11 @@ nav #logo {
     transition: background-color 0.2s ease;
 }
 
+#botao3 {
+    margin-left: 15px;
+    transition: background-color 0.2s ease;
+}
+
 .navegacao hr {
     margin-top: 0;
     height: 2px;
@@ -158,40 +163,17 @@ nav #logo {
     justify-content:space-between;
 }
 
-#situacao_matricula {
+#situacao_contrato{
     background-color: #c1ff72;
     padding: 0px 10px 0px 10px;
     border-radius: 8px;
 }
 
-#titulo_responsavel {
-    margin-bottom: 0;
-    color: #545454;
-    font-size: 20px;
-}
-
-#titulo_responsavel + hr {
-    margin-top: 0;
-}
-
-.bloco_responsavel {
-    margin-top: 30px;
-    width: 80%;
-}
-.bloco_responsavel .linha1 {
-    background-color: #bdbdbd;
-    padding-left: 30px;
-    padding-right: 30px;
-    width: 100%;
-}
-
-.bloco_responsavel .linha2 {
-    padding-left: 30px;
-    padding-right: 30px;
-    width: 100%;
-}
-
-.boletim {
+.diario {
     display: none;
     justify-content: space-evenly;
+}
+
+.frequencia {
+    display: none;
 }

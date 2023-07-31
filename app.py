@@ -3,6 +3,10 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from routes import *
 
+app = Flask(__name__)
+app.secret_key = "XUXA"
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///bancodados.db'
+
 aluno0 = Aluno("Ronaldo", "1234")
 professor0 = Professor("Vagner", "1234")
 administrador0 = Administrador("Mario", "1234")
@@ -10,10 +14,6 @@ administrador0 = Administrador("Mario", "1234")
 dados[ALU][aluno0.get_matricula()]= aluno0
 dados[PROF][professor0.get_matricula()]= professor0
 dados[ADM][administrador0.get_matricula()]= administrador0
-
-app = Flask(__name__)
-app.secret_key = "XUXA"
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///bancodados.db'
 
 # criação do banco de dados
 
