@@ -16,7 +16,7 @@ num_alu_ano = 0
 num_prof_ano = 0
 num_adm_ano = 0
 
-def _gerador_matricula(tipo):
+def gerador_matricula(tipo):
     global ano_set, num_alu_ano, num_prof_ano, num_adm_ano
     
     ano = datetime.datetime.now().date().strftime("%Y")
@@ -65,7 +65,7 @@ class Usuario (ABC):
     def __init__ (self, nome, senha):
         
         self.__matricula = self.set_matricula()
-        self.__nome = nome
+        self.nome = nome
         self.__senha = senha
     
     @abstractmethod
@@ -84,78 +84,7 @@ class Usuario (ABC):
     def dados_pessoais (self, email, telefone_pessoal):
         self.email = email
         self.telefone_pessoal = telefone_pessoal
-    
-    
 
-
-
-
-
-
-class Administrador (Usuario):
-
-    def __init__(self, nome, senha):
-        super().__init__(nome, senha)
-    
-    def set_matricula(self):
-        return _gerador_matricula(ADM)
-    
-    def dados_pessoais(self, email, telefone_pessoal, cpf):
-        super().dados_pessoais(email, telefone_pessoal)
-
-
-
-
-class Professor (Usuario):
-
-    def __init__(self, nome, senha):
-        super().__init__(nome, senha)
-    
-
-    def set_matricula(self):
-        return _gerador_matricula(PROF)
-    
-    def dados_pessoais(self, email, telefone_pessoal, cpf,
-                        cep, rua, bairro, cidade, numero_casa):
-        
-        super().dados_pessoais(email, telefone_pessoal, cpf)
-        
-        
-
-        self.cep = cep
-        self.rua = rua
-        self.bairro = bairro
-        self.cidade = cidade
-        self.numero_casa = numero_casa
-    
-
-
-class Aluno (Usuario):
-
-    def __init__(self, nome, senha):
-        super().__init__(nome, senha)
-    
-
-    def set_matricula(self):
-        return _gerador_matricula(ALU)
-    
-    def dados_pessoais(self, email, telefone_pessoal, cpf,
-                       nome_responsavel,numero_responsavel1, numero_responsavel2,
-                        cep, rua, bairro, cidade, numero_casa):
-        
-        super().dados_pessoais(email, telefone_pessoal, cpf)
-        
-        self.nome_responsavel = nome_responsavel
-        self.numero_responsavel2 = numero_responsavel1
-        self.numero_responsavel1 = numero_responsavel2
-
-        self.cep = cep
-        self.rua = rua
-        self.bairro = bairro
-        self.cidade = cidade
-        self.numero_casa = numero_casa
-
-    
 
 
 if __name__ == "__main__":

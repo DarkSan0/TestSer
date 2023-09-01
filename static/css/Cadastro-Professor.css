@@ -17,7 +17,6 @@ body {
     );
     padding: 50px;
     color: black;
-    font-size: 1.25rem;
 }
 
 .fonte_do_input_lado {
@@ -27,7 +26,7 @@ body {
 }
 
 .container {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     width: 100%;
@@ -141,7 +140,7 @@ body {
 /* segundo container*/
 .container-right {
     position: fixed;
-    top: 0;
+    top: 2;
     right: 0;
     width: 30%;
     height: 100%;
@@ -209,3 +208,21 @@ body {
     left: 50%;
     margin-top: 15%;
 }
+
+.msg-erro {
+    top: 75%;
+}
+
+/*CPF inválido */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
+}
+
+.vibrar {
+    animation: shake 0.5s;
+}
+
+

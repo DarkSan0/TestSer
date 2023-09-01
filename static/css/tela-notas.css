@@ -1,0 +1,80 @@
+.btnt{
+
+  display: inline;
+  border-radius: 20px;
+  color: #0c0c0c;
+  font-size: 20px;
+  cursor: pointer;
+  transition: bacground-color 0.5s;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+
+}
+.janela-modal{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top:0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.445);
+  display: none;
+}
+
+.corpo-modal{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  min-width: 450px;
+  min-height: 200px;
+  background-color: rgb(255, 252, 252);
+  padding: 50px;
+  
+
+}
+.fechar{
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 20px;
+  height:20px;
+  color: #fcf8f8;
+  background-color: #0c0c0c;
+  align-items: center;
+  cursor: pointer;
+}
+
+.janela-modal.abrir{
+  display: flex;
+}
+
+.table-modal{
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    overflow: auto;
+    width: 100%;
+}
+.td-modal{
+  background: #fcf6f6;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-top: 1px solid #eee;
+  box-shadow: 1px 1px 0 #fff inset;
+  padding: 8px;
+}
+
+.th-modal{
+  border: 1px solid #ddd;
+    color: #555555;
+    font-weight: 900;
+    padding: 8px;
+    text-align: left;
+}
+.tabela-de-notas{
+  padding: 80px;
+  top: 25%;
+  left: 10%;
+  display: flex;
+}

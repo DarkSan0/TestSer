@@ -1,0 +1,10 @@
+/* Estilo personalizado para a seção de paginação */
+.pagination_section {
+    margin-top: 20px; /* Adicione espaçamento acima */
+    text-align: center; /* Centralizar o conteúdo horizontalmente */
+}
+
+/* Espaçamento entre os botões de paginação */
+.pagination_section a {
+    margin: 0 5px;
+}

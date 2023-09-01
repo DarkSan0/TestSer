@@ -1,22 +1,9 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Professores</title>
-    <link rel="icon" href="/static/imagens/favicon.ico" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="/static/css/Informacoes-aluno.css">
-</head>
-<body>
-    <nav>
-        <img src="https://cdn-icons-png.flaticon.com/128/7666/7666148.png" alt="menu" id="menu">
-        <div>
-            <span id="nome_escola"> ECIT ENEAS</span> 
-            <img src="/static/imagens/logo-removebg-preview.png" alt="logo" id="logo">
-        </div>
-    </nav>
+{% extends "navbar.html" %}
+{% block title %}Principal{% endblock %}
+{% block header2 %}
+<link rel="stylesheet" href="/static/css/Informacoes-aluno.css">
+{% endblock %}
+{% block conteudo %}
     <div class="sino">
         <div>
             <span> 1 </span>
@@ -49,7 +36,7 @@
                         <span class="item1"><b>Email:</b> luizmiguelgb@gmail.com</span>
                     </div>
                     <div class="linha2">
-                        <span class="item1"><b>Curso:</b> Sexologia</span>
+                        <span class="item1"><b>Curso:</b> Informatica</span>
                     </div>
                     <div class="linha3">
                         <span><b>Situacao:</b> <span id="situacao_matricula"> Matriculado </span></span>
@@ -62,7 +49,7 @@
             <hr>
             <h3 id="titulo_responsavel"> Dados Familiares</h3>
             <hr>
-
+            
             <div class="bloco_responsavel">
                 <div class="linha1">
                     <span> <b>Nome:</b> Joseilda Tavares Pinto Silva</span>
@@ -76,15 +63,72 @@
             </div>
         </div>
 
-        <div class="boletim">
-            <div class="colunas_boletim">
-                oi
-            </div>
-            <div class="grafico">
-                oi2
-            </div>
+        <div class="boletim container p-3 ">
+            <table class="table table-hover table-bordered table-secondary ">
+                <thead>
+                    <tr class="row">
+                        <th class=" col border table-secondary text-center">Diário</th>
+                        <th class=" col table-secondary text-center">Disciplinas</th>
+                        <th class=" col table-secondary text-center">T.Faltas</th>
+                        <th class=" col table-secondary ">% Freq.</th>
+                        <th class=" text-center col table-secondary">E1
+                            <table class="table table-secondary">
+                                <thead>
+                                    <tr>
+                                        <th>N</th>
+                                        <th>F</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </th>
+                        <th class=" text-center col table-secondary">E2
+                            <table class="table table-secondary">
+                                <thead>
+                                    <tr>
+                                        <th>N</th>
+                                        <th>F</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </th>
+                        <th class=" text-center col table-secondary">E3
+                            <table class="table table-secondary">
+                                <thead>
+                                    <tr>
+                                        <th>N</th>
+                                        <th>F</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </th>
+                        <th class=" text-center col table-secondary">E4
+                            <table class="table table-secondary">
+                                <thead>
+                                    <tr>
+                                        <th>N</th>
+                                        <th>F</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </th>
+                        <th class=" col border table-secondary text-center">MD</th>
+                        <th class=" text-center col table-secondary">NAF
+                            <table class="table table-secondary">
+                                <thead>
+                                    <tr>
+                                        <th>N</th>
+                                        <th>F</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </th>
+                        <th class=" col border table-secondary text-center">MFD/Conceito</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
         </div>
     </div>
     <script src="/static/js/informacoes-aluno.js"></script>
-</body>
-</html>
+    
+{% endblock %}

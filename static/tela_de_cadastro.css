@@ -1,0 +1,139 @@
+
+@font-face {
+    font-family: 'Open Sans Light';
+    font-style: normal;
+    font-weight: 300;
+    src:url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTRa1RVmPjeKy21_GQJaLlJI.woff) format('woff');
+}
+
+body {
+    background: linear-gradient(
+        to right,
+        #3779AE 0%,
+        #3779AE 65%,
+        #8FC5C3 65%,
+        #8FC5C3 70%,
+        white 70%,
+        white 100%
+    );
+    padding: 50px;
+    color: black;
+    font-size: 1.25rem;
+}
+
+.imagem-preview{
+    right: 30px;
+    
+
+
+}
+
+.fonte_do_input_lado {
+    font-family: "Open Sans Light";
+}
+
+.center-nome-ft {
+    display: flex;
+    width: 50%;
+
+
+}
+
+.div_nome_do_aluno{
+    display: flex;
+    top: 2px;
+    left: 220px;
+    position: absolute; 
+}
+
+
+
+
+.input_aluno{
+    width: 244%;
+    height: 38px;
+}
+
+.box_button{
+    left: 50%;
+    bottom: 17%;
+    transform: translateX(-50%);
+    position: fixed; 
+}
+
+.div_cpf{
+    top: 12%;
+    left: 220px;
+    position: absolute;
+
+}
+.div_numero_a{
+    top: 12%;
+    left: 555px;
+    position: absolute;
+}
+.input_maior{
+    width: 244%;
+    height: 45px;
+}
+
+.input_menor{
+    height: 45px;
+    width: 15%;
+
+}
+.div_Data{
+    display: flex;
+    top: 75%;
+    left: 8%;  
+    position: absolute;
+}
+
+
+
+
+.p{
+    background-color: #DD4B6D;
+    transform: translate(-50% -50%);
+    right: 6.5%;
+    top: 3%;
+    padding: 30px;
+    display: flex;
+    position: absolute;
+    border-radius: 35px;
+}
+
+
+.botao {
+    color: white;
+    width: 150px;
+    font-weight: bold;
+    border-radius: 0%;
+    height: 40px; 
+
+}
+.botao_professor{
+   border-radius: 0%;
+   height: 55px;
+    
+
+}
+.box_professor{
+    left: 78%;
+    top: 56%;
+    padding: 15px;
+    display: flex;
+    position: fixed; 
+}
+
+.botao_aluno{
+    border-radius: 0%;
+    height: 55px;
+}
+.box_aluno{
+    left: 78%;
+    top: 35%;
+    padding: 15px;
+    display: flex;
+    position: fixed; 
+}

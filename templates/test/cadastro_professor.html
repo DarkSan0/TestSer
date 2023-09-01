@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/templates/test/css/cadastro_aluno.css">
+  <link rel="stylesheet" href="/static/css/navbar.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <div class="container  my-5">
+    <main>
+      <div class="p-4 border  shadow text-bg-primary">
+        <h3 class=" display-6" > Adicionar Professor</h3>
+      </div>
+      <div class="d-flex shadow">
+        <div name="divDireita" class="p-3 w-50 info mx-auto border">
+          <div class="d-flex">
+            <img class=" me-5" src="data:image/png;base64,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"/>
+            <div class="row">
+              <p class="my-5 border-bottom h5 p-3">Adicionando Professor </p>
+            </div>
+        </div>
+        <hr class="">
+
+        <div class="row">
+          <div class="btn-group ">
+            <form action=""><button class="btn btn-outline-primary p-2 " >Cadastro de Alunos</button></form>
+            <button class="btn btn-outline-primary p-2" disabled>Cadastro de Professores</button>
+            
+          </div>
+          
+        </div>
+        <div class="row">
+          <img height="360" src="/static/imagens/logo-removebg-preview.png" alt="LogoEneas" >
+        </div>
+      </div>
+
+      <div class="container border p-3">
+        <div class="mx-auto">
+          <div class="row mb-3 text-center border-bottom">
+            <div class="col border-bottom border-end p-3" id="Informações">
+      
+                <p class="h2"> <img style="height: 40px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAkJJREFUSEu1lTtvE0EQx/9zZ7uL8F3sxeLVpICSig+AkoCJkEDKHY+GT4CEcKRQIdIRhAUFPRUSeC2BeIgo4VHS0iGKNDwCvrPXFqFAsX2D1kmQ4/h85iJveTPz/83szOwRRnxoxPoYCuC71llm3AJoYjMhXiXgZlbWX0UlGAnwXGseTLf7CRFjLltWxUGQgYCKa58ixhKAn8w0T2Qsd/LnYJqIFwHkAqbJXLn2NgwyEOA79goDkyBcECVV6hbxXNsF4wmA10KqM7EAnmPXAaQBc0xI/3e3yLfzY+OpRLIKYE1IdTAuoAJAbLSamUNP12shgIqQKhcXoO98CgxXlJUMuaIlIVU+FqC7ycQ8126nVkxqm4HBU0R8B8D+PTVZZ+U79nUGtJjZk2V7a0zvxx7T7UDfyRwNOCgYhGkGtZj5nUFGMSurn/e8aFECUfbQPaifS6ebKaMAxgkAx/U09Yh5AD4y4YPxxyhmn1fX+257v4/erJUH0UPdxKgMt+xrAdGVXKn2ptd/VwW+Y80w6OWmI70g0EKi2Vq1njUa3cG6wlYyMcEIFgDMbNnyQir9tPw7OwCNy/usjab5qZM506Io124MU0HFte8SowDgh5nCsfFH6td23A6AP2tfY8I9gN8LWT85jLj2YYCqjr3cebdAV4WsPegL8BxbP2hO1PL07Ztjn9YPHwiPRUldCgN8AXA42Qys3juPqsa/mDnA7eA7gK9CqiNhANYGIVXkjyikil3xsYSiqgmdov8JHNZ35BX8BfnK3hmJPCRnAAAAAElFTkSuQmCC"/> Informações</p>
+              
+            </div>
+            
+            <div class="col border-start border-bottom p-3" >
+              <div class="row">
+                <button class="btn" id="botao_end">
+                  <p class="h5 "><img style="height: 30px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAfxJREFUSEu1lD9oE1Ecxz8vl0ItKFzucsGK4h9EkIIIrYhiV0HQwXpIERcHHRyEgpO7k1AHp44KVfpKF8HBUWuhDgoiuhQULFHy57lprcn95NoEYpPcuwTy1vu+7+f7+/NOMeCjBuyPFWBC90BNMY2oC8CJ7UDyXuBFtq6eektmPSlkV0D1Wm5PbVOeKNSlBAMBFmobwzdGnxd/ddJ1BBQvjo5khzdWgbE0LVSw6rvmnJrj7059R0A5dB8L6noa86ZGhNnCopmxAqph7ngdPkL7fAJttgKVwlzcmv+OwGamnjmYX6p8b/3QVkHpivsIpW53Sp8E2NIrdS9YqN5PBoTeGsiRvgDwOtBm0gLIxduwqylqpu42j9Z2CZiCNp4NYAC3HwBQDbTxbYC3wESfLVoJtDk7sCEr4UF+0dxNBFSuehNRJHEVbce6RThHA11eSwRs77n3DuRkLw8NeBloc9760GJBecofl0wUV2H9GTYMxYExT5tPqQCN1/oQuJOmCoG5gja3Omm7JpSbDJV+5pYVnLJAPvxh5PR+vf67J0AsLk7v9rO1oWXgWBfIF3DOBLr8o1sIa4/Ll/294kRvgEM7TL46DpPeM/MtqUIrIL5cCb19EfIKONwwWwFnKil5E5oK0NKueYTPeWVmlKaeZgFSA9KY9Tzkfk1b7/0DM061GVYbZBUAAAAASUVORK5CYII="/>Endereços </p> 
+                </button>
+                </div>
+              </div>
+
+            <div class="col border-start border-bottom p-3" id="Responsável">
+              <div class="row">
+                <button class="btn" id="botao_resp">
+                    <p class="h5"> <img style="height: 30px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAkJJREFUSEu1lTtvE0EQx/9zZ7uL8F3sxeLVpICSig+AkoCJkEDKHY+GT4CEcKRQIdIRhAUFPRUSeC2BeIgo4VHS0iGKNDwCvrPXFqFAsX2D1kmQ4/h85iJveTPz/83szOwRRnxoxPoYCuC71llm3AJoYjMhXiXgZlbWX0UlGAnwXGseTLf7CRFjLltWxUGQgYCKa58ixhKAn8w0T2Qsd/LnYJqIFwHkAqbJXLn2NgwyEOA79goDkyBcECVV6hbxXNsF4wmA10KqM7EAnmPXAaQBc0xI/3e3yLfzY+OpRLIKYE1IdTAuoAJAbLSamUNP12shgIqQKhcXoO98CgxXlJUMuaIlIVU+FqC7ycQ8126nVkxqm4HBU0R8B8D+PTVZZ+U79nUGtJjZk2V7a0zvxx7T7UDfyRwNOCgYhGkGtZj5nUFGMSurn/e8aFECUfbQPaifS6ebKaMAxgkAx/U09Yh5AD4y4YPxxyhmn1fX+257v4/erJUH0UPdxKgMt+xrAdGVXKn2ptd/VwW+Y80w6OWmI70g0EKi2Vq1njUa3cG6wlYyMcEIFgDMbNnyQir9tPw7OwCNy/usjab5qZM506Io124MU0HFte8SowDgh5nCsfFH6td23A6AP2tfY8I9gN8LWT85jLj2YYCqjr3cebdAV4WsPegL8BxbP2hO1PL07Ztjn9YPHwiPRUldCgN8AXA42Qys3juPqsa/mDnA7eA7gK9CqiNhANYGIVXkjyikil3xsYSiqgmdov8JHNZ35BX8BfnK3hmJPCRnAAAAAElFTkSuQmCC"/> Responsável</p>
+                </button>
+              </div>
+            </div> 
+          </div>
+          <h4 class="mb-5 me-5 d-inline">Dados Do Professor</h4> 
+
+          {% with mensagens = get_flashed_messages() %}
+  
+          {% for mensagem in mensagens %}
+    
+          <div class=" d-inline mx-5   alert alert-success alert-dismissible fade show"role="alert">
+              <strong >{{ mensagem }}</strong>
+              <button type="button"class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+    
+          {% endfor %}
+    
+      {% endwith %} 
+      <form class="needs-validation" method="post" action="{{url_for('cadastro_professor')}}" >
+        <div id="informacoes">
+            <div class="row my-3">
+              <div class="col">
+                <label for="nome_prof" class="form-label"> Nome</label>
+                <input class="form-control shadow-none " type="text" id="nome-prof" name="nome_prof" placeholder="Digite o nome do professor" required>
+              </div>
+            </div>
+            <div class="row my-3">
+              <div class="col">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control shadow-none " id="email" placeholder="exemplo@gmail.com" value="" required>
+              </div>
+            </div>
+            <div class="row my-3">
+              <div class="col">
+                <label for="cpf" class="form-label">CPF</label>
+                <input  class="form-control w-100 shadow-none" type="text" id="cpf" name="cpf" placeholder="Digite o CPF" required>
+            
+              </div>
+              <div class="col">
+                <label for="numero-prof" class="form-label">Telefone</label>
+                <input  class="form-control w-100 shadow-none" type="tel" id="numero-prof" name="numero_prof" placeholder="Digite o número do professor" pattern="[0-9]+" required>
+              </div>
+            </div>
+            <div class="row my-3">
+              <div class="form-group col ">
+                <label for="data-nascimento">D/Nascimento:</label>
+                <input class="form-control shadow-none" type="date" id="data_nascimento" name="data-nascimento" required>
+            </div>
+            <div class="col">
+              <label for="country" class="form-label ">Sexo</label>
+                <select class="form-select form-group shadow-none w-100 " id="country" required>
+                  <option disabled selected class="text-secondary" >Selecionar</option>
+                  <option>Masculino</option>
+                  <option>Feminino</option>
+                  <option>Outros</option>
+                </select>
+              </div>
+            </div>
+            
+          </div> 
+        <!--<div class="Endereços">
+          <div class="row my-3">
+            <div class="col">
+              <label for="lastName" class="form-label"> CEP:</label>
+              <input type="text" class="form-control shadow-none " name="cep" type="text" id="cep" value="" size="10" maxlength="9" onblur="pesquisacep(this.value);" placeholder="Digite o CEP">
+            </div>
+          </div>
+          <div class="row my-3">
+            <div class="col">
+              <label for="rua" class="form-label">Rua:</label>
+              <input type="text" class="form-control shadow-none " name="rua" type="text" id="rua" size="60">
+            </div>
+
+            <div class="col">
+              <label for="Estado">Estado:</label>
+              <input class="form-control w-100 shadow-none" name="uf" type="text" id="uf" size="2" />
+          </div>
+          </div>
+          <div class="row my-3">
+            <div class="col">
+              <label for="firstName" class="form-label">Bairro</label>
+              <input type="text" class="form-control w-100 shadow-none" id="firstName" placeholder="" value="" required>
+
+            
+          
+            </div>
+            <div class="col">
+              <label for="lastName" class="form-label">Cidade</label>
+              <input type="" class="form-control w-100 shadow-none" id="numero" type="text" name="numero" placeholder="Casa" required>
+            </div>
+          </div>
+          <div class="row my-3">
+            <div class="form-group col ">
+              <label for="numero">Número</label>
+              <input class=" form-control shadow-none" id="numero" type="text" name="numero" placeholder="Casa" required>
+            </div>
+          
+          </div>
+          
+        </div> -->
+
+        <!--<div class="Responsável">
+          <div class="row my-3">
+            <div class="col">
+              <label for="lastName" class="form-label"> Nome do Responsável</label>
+              <input type="text" class="form-control shadow-none "type="text" id="nome-responsavel" name="nome_responsavel" placeholder="Digite o nome do responsavel"  required>
+            </div>
+          </div>
+          <div class="row my-3">
+            <div class="col">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control shadow-none " id="email" placeholder="exemplo@gmail.com" value="" required>
+            </div>
+          </div>
+          <div class="row my-3">
+            <div class="col">
+              <label for="firstName" class="form-label">CPF</label>
+              <input type="text" class="form-control w-100 shadow-none" id="firstName" placeholder="" value="" required>
+          
+            </div>
+            <div class="col">
+              <label for="Telefone_1" class="form-label">Telefone:</label>
+              <input type="" class="form-control w-100 shadow-none" id="Telefone_1" placeholder="Telefone do responsável" value="" required>
+            </div>
+            <div class="col">
+              <label for="Telefone_1" class="form-label">Telefone 2:</label>
+              <input type="" class="form-control w-100 shadow-none" id="Telefone_1" placeholder="Telefone do responsável" value="" required>
+            </div>
+          </div>
+          </div>
+        </div> -->
+        <div class="d-flex justify-content-center ">
+          <button class=" w-100 rounded-2 btn btn-outline-success ">Cadastrar</button>
+        </div>
+      </form>
+    </div>
+  </main>
+</div>
+
+{% with mensagens = get_flashed_messages() %}
+
+{% for mensagem in mensagens %}
+
+<div class=" msg-erro mx-3 w-50 alert alert-success alert-dismissible fade show"role="alert">
+    <strong >{{ mensagem }}</strong>
+    <button type="button"class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+{% endfor %}
+
+{% endwith %}
+
+
+
+
+
+
+<script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script src="/static/js/validarCPF.js"></script>
+<script src="/static/js/verificar-foto.js"></script>
+<script src="/static/js/cep.js"></script>
+<script src="/static/js/validar-data.js"></script>
+<script src="/templates/test/js/cadastro-aluno.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+<script src="/static/js/salvar-credenciais.js"></script>
+<script src="/static/js/botao-login.js"></script>
+<script src="checkout.js"></script>
+</body>
+</html>
+

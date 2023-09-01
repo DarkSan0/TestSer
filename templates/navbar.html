@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block title %}{% endblock %}
+{% block header %}<link rel="stylesheet" href="/static/css/navbar.css">
+{% block header2 %}{% endblock %}
+{% endblock %}
+{% block navbar %}
+
+<nav class="nav-position fixed-top shadow-lg ">
+    <div class="dropdown">
+        <img src="https://cdn-icons-png.flaticon.com/128/7666/7666148.png" alt="menu" id="menu" class="dropdown" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+    </div>
+    
+    <div>
+        <span id="nome_escola"> ECIT ENEAS</span> 
+        <img class="ms-3" src="/static/imagens/logo1.png" alt="logo" id="logo" >
+    </div>
+  </nav>
+
+    <div class="offcanvas offcanvas-start d-flex flex-column flex-shrink-0 p-3 text-bg-dark" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="width: 280px;" >
+
+      <a href="" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+        <img src="https://static.wixstatic.com/media/368834_fe09ceaea3ac4992b8d81bfed572de23~mv2.png/v1/fit/w_768%2Ch_768%2Cal_c%2Cq_80,enc_auto/file.jpg" alt="" width="50" height="50" class="rounded-circle me-4">
+        <h4>Manuel Gomes</h4>
+      </a>
+      <hr>
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+          <a href="{{url_for('redirecionador_home')}}" class="nav-link active p-2" aria-current="page">  
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
+              <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146ZM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5Z"/>
+            </svg>
+            Inicio
+          </a>
+        </li>
+        
+        <li>
+          <a href="{{url_for('administrador.cadastrar_aluno')}}" class="nav-link text-white">
+            <svg class="bi pe-none me-2" width="25" height="25"><use xlink:href="#table"/></svg>
+            Cadastro de Usuários
+          </a>
+        </li>
+        <li>
+          <a href="{{url_for('administrador.alunos_cadastrados')}}" class="nav-link text-white">
+            <svg class="bi pe-none me-2" width="25" height="25"><use xlink:href="#grid"/></svg>
+            Usuários Cadastrados
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link text-white">
+            <svg class="bi pe-none me-2" width="25" height="25"><use xlink:href="#people-circle"/></svg>
+            Turmas
+          </a>
+        </li>
+      </ul>
+      <hr>
+      <div class="dropdown">
+        <a href="{{url_for('deslogar')}}" class="d-flex align-items-center text-white text-decoration-none">
+          <button type="button"  class="btn btn-outline-danger">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
+              <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+            </svg>
+              Sair
+          </button>
+        </a>
+      </div>
+
+    </div>
+{% block conteudo %}
+{% endblock %}
+<script>
+    const sidebar = document.getElementById('sidebar');
+
+    function openSidebar() {
+        sidebar.style.left = '0';
+    }
+    
+    function closeSidebar() {
+        sidebar.style.left = '-250px';
+    }
+    
+    document.addEventListener('click', function (event) {
+        const target = event.target;
+        const isClickInsideSidebar = target.closest('#sidebar');
+        const isClickOnHamburger = target.closest('.dropdown');
+        
+        if (!isClickInsideSidebar && !isClickOnHamburger) {
+            closeSidebar();
+        }
+    });
+</script>
+
+{% endblock %}
+
+

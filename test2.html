@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/tela-notas.css">
+    <script src="https://kit.fontawesome.com/a04af11849.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+
+<table class="table table-striped-columns">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">1° Bimestre</th>
+      <th scope="col">2° Bimestre</th>
+      <th scope="col">3° Bimestre</th>
+      <th scope="col">4° Bimestre</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Disciplina1</th>
+      <td>    
+        <div onclick="abrirModal()" class="btnt"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
+            <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+            <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+            </svg></i>
+        </div>
+    </td>
+      <td>Modal1</td>
+      <td>Modal2</td>
+      <td>Modal3</td>
+    </tr>
+  </tbody>
+</table>
+
+<form>
+    <div class="div d-flex justify-content-center">
+        <table class="table">
+            <thead class="">
+                <tr>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</form>
+
+
+    <div class="janela-modal" id="janela-modal">
+        <div class="corpo-modal">
+            <button class=" fechar btn-close" id="fechar"></button>
+            <div>
+                <h3>Detalhamento de notas</h3><br><br>
+                <p></p><br>
+                <h5 style="color: rgba(0, 0, 0, 0.685);">Musicologia</h5>
+            </div>
+           <div >
+                <table class="table-modal ">
+                    <tr>
+                        <th class="th-modal">sigla</th>
+                        <th class="th-modal">tipo</th>
+                        <th class="th-modal">descrição</th>
+                        <th class="th-modal">peso</th>
+                        <th class="th-modal">nota obitida</th>
+                        <th class="th-modal">data</th>
+
+
+                    </tr>
+                    <tr>
+                        <td class="td-modal">A1</td>
+                        <td class="td-modal">prova</td>
+                        <td class="td-modal">avaliacao1</td>
+                        <td class="td-modal">-</td>
+                        <td class="td-modal">Nota1</td>
+                        <td class="td-modal">Ano1</td>
+                    </tr>
+                    <tr>
+                        <td class="td-modal">A2</td>
+                        <td class="td-modal">prova</td>
+                        <td class="td-modal">avaliacao2</td>
+                        <td class="td-modal">-</td>
+                        <td class="td-modal">Nota2</td>
+                        <td class="td-modal">Ano2</td>
+                    </tr>
+
+                    <tr>
+                        <td class="td-modal">RE</td>
+                        <td class="td-modal">Recuperaçao</td>
+                        <td class="td-modal">Recuperaçao</td>
+                        <td class="td-modal">-</td>
+                        <td class="td-modal">-</td>
+                        <td class="td-modal">Ano3</td>
+                    </tr>
+                </table>
+           </div>
+        </div>
+    </div>
+    <button id="botaoAdicionarMateria">Adicionar Nova Matéria</button>
+
+    <script>
+        // Contador para acompanhar o número de matérias
+        let contadorMaterias = 1;
+
+        // Função para adicionar uma nova matéria com suas notas
+        function adicionarNovaMateria() {
+            const corpoTabela = document.querySelector('.table tbody');
+
+            const novaLinha = document.createElement('tr');
+            novaLinha.innerHTML = `
+                <th scope="row">Disciplina${contadorMaterias}</th>
+                <td>
+                    <div onclick="abrirModal('Modal${contadorMaterias}')" class="btnt">
+                        <i class="fas fa-card-list"></i>
+                    </div>
+                </td>
+                <td>Modal${contadorMaterias}</td>
+                <td></td>
+                <td></td>
+            `;
+
+            corpoTabela.appendChild(novaLinha);
+
+            contadorMaterias++;
+        }
+
+        // Função para abrir o modal e exibir detalhes da matéria
+        function abrirModal(nomeMateria) {
+            const modal = document.getElementById('janela-modal')
+            modal.classList.add('abrir')
+          
+            modal.addEventListener('click', (e) => {
+              if(e.target.id == 'fechar' || e.target.id == 'janela-modal'){
+                modal.classList.remove('abrir')
+              }
+            })
+        }
+
+        // Adicionar ouvinte de evento ao botão "Adicionar Nova Matéria"
+        const botaoAdicionarMateria = document.getElementById('botaoAdicionarMateria');
+        botaoAdicionarMateria.addEventListener('click', adicionarNovaMateria);
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+    <!--<script src="/static/js/notas-prof.js"></script>-->
+</body>
+</html>
+

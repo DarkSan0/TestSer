@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/tela-notas.css">
+    <script src="https://kit.fontawesome.com/a04af11849.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+
+<table class="table table-striped-columns">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">1° Bimestre</th>
+      <th scope="col">2° Bimestre</th>
+      <th scope="col">3° Bimestre</th>
+      <th scope="col">4° Bimestre</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Musicologia</th>
+      <td>    
+        <div onclick="abrirModal()" class="btnt"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
+            <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+            <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+            </svg></i>
+        </div>
+    </td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">Informatica</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+  </tbody>
+</table>
+
+<form>
+    <div class="div d-flex justify-content-center">
+        <table class="table">
+            <thead class="">
+                <tr>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</form>
+
+
+    <div class="janela-modal" id="janela-modal">
+        <div class="corpo-modal">
+            <button class=" fechar btn-close" id="fechar"></button>
+            <div>
+                <h3>Detalhamento de notas</h3><br><br>
+                <p></p><br>
+                <h5 style="color: rgba(0, 0, 0, 0.685);">Musicologia</h5>
+            </div>
+           <div >
+                <table class="table-modal ">
+                    <tr>
+                        <th class="th-modal">sigla</th>
+                        <th class="th-modal">tipo</th>
+                        <th class="th-modal">descrição</th>
+                        <th class="th-modal">peso</th>
+                        <th class="th-modal">nota obitida</th>
+                        <th class="th-modal">data</th>
+
+
+                    </tr>
+                    <tr>
+                        <td class="td-modal">A1</td>
+                        <td class="td-modal">prova</td>
+                        <td class="td-modal">avaliacao1</td>
+                        <td class="td-modal">-</td>
+                        <td class="td-modal">100</td>
+                        <td class="td-modal">2023</td>
+                    </tr>
+                    <tr>
+                        <td class="td-modal">A2</td>
+                        <td class="td-modal">prova</td>
+                        <td class="td-modal">avaliacao2</td>
+                        <td class="td-modal">-</td>
+                        <td class="td-modal">100</td>
+                        <td class="td-modal">2023</td>
+                    </tr>
+
+                    <tr>
+                        <td class="td-modal">RE</td>
+                        <td class="td-modal">Recuperaçao</td>
+                        <td class="td-modal">Recuperaçao</td>
+                        <td class="td-modal">-</td>
+                        <td class="td-modal">-</td>
+                        <td class="td-modal">2023</td>
+                    </tr>
+                </table>
+           </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        $(function () {
+            // NA SELEÇÃO DA LINHA
+            $(".gfgselect").click(function () {
+            // ENCONTRANDO ELEMENTOS DE LINHAS E ARMAZENANDO EM VARIÁVEIS
+                var a =
+        $(this).parents("tr").find(".gfgusername").text();
+                var c =
+        $(this).parents("tr").find(".gfgpp").text();
+                var d =
+        $(this).parents("tr").find(".gfgscores").text();
+                var e =
+        $(this).parents("tr").find(".gfgarticles").text();
+                var p = "";
+                // CRIANDO DADOS PARA MOSTRAR NO MODELO
+                p +=
+        "<p id='a' name='GFGusername' >GFG UserHandle: "
+                + a + " </p>";
+                
+                p +=
+        "<p id='c' name='GFGpp'>Practice Problems: "
+                + c + "</p>";
+                p +=
+        "<p id='d' name='GFGscores' >Coding Score: "
+                + d + " </p>";
+                p +=
+        "<p id='e' name='GFGcoding' >GFG Article: "
+                + e + " </p>";
+                //LIMPAR OS DADOS PRÉ-PREENCHIDOS
+                $("#divGFG").empty();
+                //ESCREVER OS DADOS NO MODELO
+                $("#divGFG").append(p);
+            });
+        });
+    </script>
+
+
+
+        <link rel="stylesheet"
+        href=
+    "https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity=
+    "sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+        crossorigin="anonymous" />
+    <script src=
+    "https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity=
+    "sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous">
+    </script>
+    <script src=
+    "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity=
+    "sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous">
+    </script>
+    <script src=
+    "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity=
+    "sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous">
+    </script>
+    <script src=
+    "https://code.jquery.com/jquery-3.5.1.js"
+            integrity=
+    "sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+            crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+    <script src="/static/js/notas-prof.js"></script>
+</body>
+</html>

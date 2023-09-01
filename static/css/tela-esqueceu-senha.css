@@ -17,58 +17,38 @@ body {
         white 100%
     );
     color: black;
-    font-size: 1.5rem;
+    
 }
 
-.btn-close {
-    margin: 1%;
-}
 
-.form-container .container{  
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 2%;
-}   
+
+
+
+
 
 form {
     background-color: #d9d9d9;
-    max-width: 600px;
-    height: 700px;
-    padding: 40px;
     border-radius: 20px;
     box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.5);
+    font-size: 20px;
+    margin-top: 13%;
 }
 
 form h1 {
-    text-align: center;
-    font-size: 40px;
-    padding-top: 10px;
+    font-size: 25px;
 }
 
-form p {
-    text-align: center;
-    margin: 40px 0;
-    font-size: 20px;
-}
 
-label {
-    font-weight: 500;
-    font-size: 20px;
-}
+
+
 
 .input-text {
     position: relative;
-    margin: 60px 0;
     background-color: none;
     
     
 }
 
-.input-text > input {
-    padding-top: 30px;
-    user-select: none;
-}
 
 .input-text label {
     position: absolute;
@@ -86,31 +66,11 @@ label {
     cursor: text;
 }
 
-form .input-text .input:focus ~ label {
-    font-display: none;
-}
 
-.botao{
-    font-family:sans-serif ;
-    margin-left: 14.4rem;
-    margin-top: 3rem;
-    font-size: 20px;
-    padding: 0.2rem;
-    text-align: center;
-    border-radius: 10px;
-}
+
 
 .botao:hover{
     background: #47474781;
     color: #000000;
 }
 
-form input[type=submit] {
-    font-size: 15px;
-    font-weight: 500;
-    padding: 10px 40px;
-    border: 1px solid #474747;
-    border-radius: 10px;
-    text-transform: uppercase;
-    cursor: pointer;
-}

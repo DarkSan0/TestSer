@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="/static/css/navbar.css">
+    <link rel="stylesheet" href="/static/css/test/princp__adm.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  </head>
+  <body class="cor">
+  <nav class="nav-position fixed-top shadow-lg ">
+    <div class="dropdown">
+        <img src="https://cdn-icons-png.flaticon.com/128/7666/7666148.png" alt="menu" id="menu" class="dropdown" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+    </div>
+    
+    <div>
+        <span id="nome_escola"> ECIT ENEAS</span> 
+        <img src="/static/imagens/logo-removebg-preview.png" alt="logo" id="logo" >
+    </div>
+  </nav>
+
+    <div class="offcanvas offcanvas-start d-flex flex-column flex-shrink-0 p-3 text-bg-dark" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="width: 280px;" >
+
+      <a href="" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+        <img src="https://github.com/mdo.png" alt="" width="50" height="50" class="rounded-circle me-4">
+        <h4>Lucas Viana</h4>
+      </a>
+      <hr>
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+          <a href="{{url_for('redirecionador_home')}}" class="nav-link active p-2" aria-current="page">  
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
+              <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146ZM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5Z"/>
+            </svg>
+            Inicio
+          </a>
+        </li>
+        
+        <li>
+          <a href="#" class="nav-link text-white">
+            <svg class="bi pe-none me-2" width="25" height="25"><use xlink:href="#table"/></svg>
+            Cadastro de Usuários
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link text-white">
+            <svg class="bi pe-none me-2" width="25" height="25"><use xlink:href="#grid"/></svg>
+            Usuários Cadastrados
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link text-white">
+            <svg class="bi pe-none me-2" width="25" height="25"><use xlink:href="#people-circle"/></svg>
+            Turmas
+          </a>
+        </li>
+      </ul>
+      <hr>
+      <div class="dropdown">
+        <a href="{{url_for('deslogar')}}" class="d-flex align-items-center text-white text-decoration-none">
+          <button type="button"  class="btn btn-outline-danger">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
+              <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+            </svg>
+              Sair
+          </button>
+        </a>
+      </div>
+
+    </div> 
+    <div class="container  my-5 px-3 py-5" id="custom-cards">
+      <hr class="my-4">
+      <div class="d-flex">
+        <p class="pb-2 mt-4 display-5">Área do administrador </p>
+        
+      </div>
+      <hr class="my-4">
+  
+      <div class="row row-cols-1 row-cols-lg-3 align-items-stretch  py-5">
+          <div class="col">
+          
+          <div class="card p-4 card-cover h-100 overflow-hidden border border-primary  rounded-4 shadow-lg" style="background-image: url('unsplash-photo-1.jpg');">
+              <div class="d-flex flex-column h-100 p-4 pb-3   text-shadow-1">
+              
+              <h3 class="text-center text-primary">Cadastro de Usuários</h3>
+              
+              <div class="border my-4 img text-center" >
+              
+              <img src="data:image/png;base64,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"/> 
+            </div>
+              <a href="{{url_for('cadastro_aluno')}}"><button type="button" class="btn btn-outline-primary w-100 ">Entrar</button></a>
+            </div>
+            
+          </div>
+        </div>
+  
+        <div class="col">
+          <div class="card card-cover h-100 overflow-hidden border border-danger rounded-4 p-4 shadow-lg " style="background-image: url('unsplash-photo-2.jpg');">
+            <div class="d-flex flex-column h-100 p-4 pb-3  text-shadow-1">
+              <h3 class="text-center text-danger">Usuários Cadastrados</h3>
+              <div class="border my-4 img text-center" >
+                <img src="data:image/png;base64,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"/>
+              </div>
+                <a href="{{url_for('alunos_cadastrados')}}"><button type="button" class="btn btn-outline-danger w-100">Entrar</button>
+                </a>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col">
+          <div class="card card-cover h-100  overflow-hidden border border-success rounded-4 p-4 shadow-lg" style="background-image: url('unsplash-photo-3.jpg');">
+            <div class="d-flex flex-column h-100 p-4 pb-3 text-shadow-1">
+              <h3 class="text-success text-center ">Turmas</h4>
+              <div class=" border my-4 img text-center">
+                <img src="data:image/png;base64,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"/>            </div>
+              <a href=""><button type="button" class="btn btn-outline-success w-100">Entrar</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+

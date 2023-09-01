@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="icon" href="/static/imagens/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/tela-esqueceu-senha.css">
+    <link rel="stylesheet" href="/static/css/navbar.css">
+</head>
+<body>
+
+<nav class="nav-position fixed-top mb-5">
+    <div class="dropdown">
+        <img src="https://cdn-icons-png.flaticon.com/128/7666/7666148.png" alt="menu" id="menu" class="dropdown" data-bs-toggle="dropdown">
+            <div class="dropdown-menu">
+                <h1 class="dropdown-header">Sobre Sistema</h1>
+                <hr class="dropdown-divider">
+                <a href="{{url_for('login')}}" class="dropdown-item">Tela de Login</a>
+            </div>
+    </div>
+    
+    <div>
+        <span id="nome_escola"> ECIT ENEAS</span> 
+        <img src="/static/imagens/logo-removebg-preview.png" alt="logo" id="logo" >
+    </div>
+</nav>
+    
+        <div class="container my-5 w-50 ">
+            <form id="formulario" class="p-5 text-center ">
+                {{form.csrf_token}}
+                <h1 class=" text-center
+                ">Siga as Instruções!</h1>
+
+                <p>Preencha o formulário com seu Nome e sua Matrícula e entraremos em contato pelo e-mail cadastrado</p>
+
+                <div class="input-text my-5">
+                    <input type="text" name="nome" id="nome" class="input my-2 p-3" autocomplete="off" required>
+                    <label>Seu nome completo:</label>
+                </div>
+
+                <div class="input-text my-5">
+                    <input type="text" name="matricula" id="matricula" class="input my-2 p-3" autocomplete="off" required>
+                    <label>Sua matrícula:</label>
+                </div>
+
+                
+                    <button class="btn btn-outline-danger" type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+    
+    <script src="/static/js/sistema-esqueceu-senha.js"></script>
+    <script src="/static/js/informacoes-aluno.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+    </script>    
+
+</body>
+</html>
